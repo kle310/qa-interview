@@ -44,6 +44,7 @@ export const ChessboardCustomBoard = () => {
         width: '500px',
         height: '500px',
       }}
+      data-fen={game.fen()}
     >
       <Chessboard position={game.fen()} onPieceDrop={onDrop} />
     </div>

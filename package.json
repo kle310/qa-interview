@@ -5,7 +5,8 @@
   "scripts": {
     "chess-ui:serve": "nx run chess-ui:serve",
     "chess-backend:serve": "nx run chess-backend:serve",
-    "start": "concurrently --kill-others \"pnpm chess-ui:serve\" \"pnpm chess-backend:serve\""
+    "start": "concurrently --kill-others \"pnpm chess-ui:serve\" \"pnpm chess-backend:serve\"",
+    "test:e2e": "npx playwright test"
   },
   "private": true,
   "dependencies": {

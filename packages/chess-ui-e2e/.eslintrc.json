@@ -1,6 +1,7 @@
 {
   "extends": ["plugin:playwright/recommended", "../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*"],
+  "ignorePatterns": [],
+
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -15,8 +16,20 @@
       "rules": {}
     },
     {
-      "files": ["src/**/*.{ts,js,tsx,jsx}"],
-      "rules": {}
+      "files": ["**/*.{ts,js,tsx,jsx}"],
+      "rules": {
+        "playwright/expect-expect": [
+          "error",
+          {
+            "assertFunctionNames": [
+              "assertMoveSucceeds",
+              "assertMoveFails",
+              "assertPawnPromotion",
+              "expect"
+            ]
+          }
+        ]
+      }
     }
   ]
 }
