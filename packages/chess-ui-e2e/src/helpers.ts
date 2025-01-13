@@ -6,7 +6,9 @@ import { Page, test, expect } from '@playwright/test';
  * @param fen FEN string to set up
  */
 export async function setupBoard(page: Page, fen: string) {
-  await page.goto(`http://localhost:4200/custom?fen=${fen}`);
+  // await page.goto(`http://localhost:4200/custom?fen=${fen}`);
+  await page.goto('/custom?fen=' + fen);
+
   await page.waitForLoadState('networkidle');
 
   /* WIP, trying to find alternative to using networkidle because networkidle 
